@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-  <title>graphql user information2</title>
+    <meta charset='utf-8'>
+    <title>GraphGL</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/graph.css'>
 </head>
-
 <body>
-  <div id="user-info">
-    <table>
-      <tr>
-        <th>STUDENT</th>
-        <th>ID</th>
-        <th>TOTAL EXP</th>
-        <th>LEVEL</th>
-      </tr>
-      <tr>
-        <th id="login"></th>
-        <th id="id"></th>
-        <th id="total-xp"></th>
-        <th id="level"></th>
-      </tr>
-    </table>
-  </div>
+    <form id="loginForm" name="loginForm" class="container" style="text-align: center"
+        onsubmit="event.preventDefault()">
+        <label for="user">User name/email</label>
+        <input name="user" id="user" type="text" placeholder="Enter user name or email" required>
+        <label for="password">User password</label>
+        <input name="password" id="password" type="password" placeholder="Enter password" required>
+        <button onclick="logIn()">Login</button>
+    </form>
+    <div id="pageContent" class="flex hidden">
+        <div id="userDataMain" class="col2">
+        </div>
+        <div id="GraphDataMain" class="col2">
+        </div>
+    </div>
+    <button id="logout" onclick="logOut()" class="hidden" style="display: none;">Log out</button>
+    <div id="tooltip" style="position: absolute; display: none;"></div>
 </body>
-
+<script src='js/profile.js'></script>
+<script src='js/graphs.js'></script>
+<script src='js/main.js'></script>
 </html>
